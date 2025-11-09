@@ -1,20 +1,22 @@
-const express = require('express');
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+
+import authRoutes from "./routes/auth.js";
+import aiRoutes from "./routes/ai.js";
+
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
-app.get('/', (_req, res) => res.send('OK'));
+app.use("/api/auth", authRoutes);
+app.use("/api/ai", aiRoutes);
 
-app.post('/api/summarize', (req, res) => {
-  const text = (req.body?.text || '').trim();
-  if (text.length < 50) return res.status(400).json({ error: '50+ chars please' });
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
-  const sentences = text.match(/[^.!?]+[.!?]/g) || [text];
-  const summary = sentences.slice(0, 3).join(' ');
-  const words = text.split(/\s+/).length;
-  const minutes = Math.ceil(words / 200);
-  res.json({ summary, wordCount: words, readingTime: minutes });
+app.listen(5000, () => {
+  console.log("Server running on 5000");
 });
-
-const PORT = 5000;
-app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
