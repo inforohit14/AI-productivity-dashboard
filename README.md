@@ -21,6 +21,16 @@ Backend:
 - Node.js
 - Express.js
 - MongoDB
+## Screenshots
+
+### Login Page
+![Login Page](./screenshots/login.png)
+
+### Login Success
+![Login Success](./screenshots/success.png)
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
 ## Installation
 
