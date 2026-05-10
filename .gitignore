@@ -1,9 +1,13 @@
-﻿client/node_modules/
+client/node_modules/
 server/node_modules/
+
+client/.vite/
+server/.vite/
+
 client/dist/
 server/dist/
-client/.env
-server/.env
+
+.env
 *.log
 .DS_Store
 Thumbs.db
