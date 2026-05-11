@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://ai-productivity-dashboard-ai3v.onrender.com',
         changeOrigin: true
       }
     }

@@ -1,4 +1,4 @@
-export default function Tasks({ tasks }) {
+export default function Tasks({ tasks = [] }) {
   return (
     <div className="page">
       <h2>Tasks</h2>

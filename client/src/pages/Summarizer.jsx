@@ -16,7 +16,7 @@ export default function Summarizer() {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/ai/summarize",
+        "https://ai-productivity-dashboard-ai3v.onrender.com/api/ai/summarize",
         {
           method: "POST",
 
