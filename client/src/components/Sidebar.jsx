@@ -40,7 +40,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         >
           <Link to="/analytics">📊 Analytics</Link>
         </li>
-      </ul>
+      </ul> 
 
       <button
         onClick={() => {
