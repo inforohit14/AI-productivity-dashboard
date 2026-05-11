@@ -3,12 +3,4 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://ai-productivity-dashboard-ai3v.onrender.com',
-        changeOrigin: true
-      }
-    }
-  }
 })
