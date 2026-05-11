@@ -1,4 +1,3 @@
-import { useState } from "react";
 import axios from "axios";
 
 export default function Register() {
@@ -20,7 +19,7 @@ export default function Register() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+          "https://ai-productivity-dashboard-ai3v.onrender.com/api/auth/register",
         formData
       );
 
